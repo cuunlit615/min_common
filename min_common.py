@@ -1,30 +1,18 @@
-def s_into_i(st):
-    ints = []
-    if isinstance(st, str):
-        for s in st:
-            ints.append(s)
-        return ints
+def min_common(a, b):
+    ans = []
+    if len(a) > len(b):
+        l1, l2 = b, a
     else:
-        return st
-
-
-def min_common(l1, l2):
-    ans_mc = []
+        l1, l2 = a, b
     for n in l1:
         if n in l2:
-            ans_mc.append(n)
-    ans_mc.sort()
-    return ans_mc[0]
+            ans.append(n)
+    ans.sort()
+    return ans[0]
 
 
-def main(inp1, inp2):
-    inp1 = s_into_i(a)
-    inp2 = s_into_i(b)
-    ans_m = min_common(inp1, inp2)
-    return ans_m
-
-
-a = [1, 2, 3, 4, 5, 6]
+a = [2, 9, 4, 19, 7]
 b = [9, 6, 4, 19, 7]
+c = ['2', '5']
 
-print(main(a, b))
+print(min_common(a, b))
