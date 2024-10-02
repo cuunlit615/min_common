@@ -7,12 +7,29 @@ def min_common(a, b):
     for n in l1:
         if n in l2:
             ans.append(n)
-    ans.sort()
-    return ans[0]
+    if ans:
+        ans.sort()
+        return ans[0]
+    else:
+        return []
 
 
-a = [2, 9, 4, 19, 7]
-b = [9, 6, 4, 19, 7]
-c = ['2', '5']
+def s_into_i(inp):
+    lc =[]
+    for n in inp:
+        lc.append(int(n))
+    return lc
 
-print(min_common(a, b))
+
+def nums_check(st):
+    if st.isdigit:
+        return st
+
+
+def main():
+    na = s_into_i(nums_check(input('nums1')))
+    nb = s_into_i(nums_check(input('nums2')))
+    return min_common(na, nb)
+
+
+print(main())
